@@ -97,8 +97,8 @@ section > h2:first-child {
     text-overflow: ellipsis;
 }
 
-.lastestMusic {
-
+.lastestMusic > p{
+    text-align: center;
 }
 
 .lastestMusic > ol {
@@ -109,6 +109,11 @@ section > h2:first-child {
     border-bottom: 1px solid #E2E2E3;
     padding: 1vw 0;
     position: relative;
+}
+
+.lastestMusic > ol > li > a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .lastestMusic > ol > li h3{
@@ -148,7 +153,6 @@ section.art {
 
 section.art .logo{
     text-align: center;
-
 }
 
 section.art .logosvg{

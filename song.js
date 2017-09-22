@@ -1,7 +1,39 @@
 $(function () {
-    $.get("./lyric.json").then(function (object) {
-        //let lyric = object.lyric;
-        let {lyric} = object;
+    let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10);
+
+    $.get('./songs.json').then(function (response) {
+        let songs = response;
+        let song = songs.filter((s)=>{
+            return (s.id == id);
+        })[0]
+        let {url, name, lyric} = song;
+        initPlayer.call(undefined, url);
+        initText(name, lyric);
+    });
+    
+    function initText(name, lyric) {
+        $('.song-description > h1').text(name);
+        parseLyric(lyric);
+    }
+
+    function initPlayer(url) {
+        let audio = document.createElement('audio');
+        audio.src = url;
+        audio.oncanplay = function () {
+            audio.play();
+            $('.dist-container').addClass('playing');
+        }
+        $('.icon-pause').on('touchstart', function () {
+            audio.pause();
+            $('.dist-container').removeClass('playing');
+        })
+        $('.icon-play').on('touchstart', function () {
+            audio.play();
+            $('.dist-container').addClass('playing');
+        })
+    }
+
+    function parseLyric(lyric) {
         let array = lyric.split('\n');
         let regex = /^\[(.+)\](.*)$/;
         array = array.map(function (string) {
@@ -20,20 +52,9 @@ $(function () {
             $p.attr('data-time', object.time).text(object.words);
             $p.appendTo($lyric.children('.lines'));
         })
-    });
-
-    let audio = document.createElement('audio');
-    audio.src = "//owmrtba0l.bkt.clouddn.com/e336%252F280a%252Fb479%252Fb378a26888fee12e50925f16162ba910.mp3";
-    audio.oncanplay = function () {
-        audio.play();
-        $('.dist-container').addClass('playing');
     }
-    $('.icon-pause').on('touchstart', function () {
-        audio.pause();
-        $('.dist-container').removeClass('playing');
-    })
-    $('.icon-play').on('touchstart', function () {
-        audio.play();
-        $('.dist-container').addClass('playing');
-    })
+
+
+
+
 });

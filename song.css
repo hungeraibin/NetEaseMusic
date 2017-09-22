@@ -69,11 +69,13 @@
     width: 44.5vw;
     position: absolute;
     border-radius: 50%;
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
 }
 
 .dist-container.playing .light,
 .dist-container.playing .cover {
-    animation: circle 20s infinite linear;
+    animation-play-state: running;
 }
 .dist-container .icon-pause {
     display: none;
