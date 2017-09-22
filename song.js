@@ -23,7 +23,7 @@ $(function () {
     });
 
     let audio = document.createElement('audio');
-    audio.src = "//m10.music.126.net/20170921141805/1ebfac3e86459736df67ad23f29468a0/ymusic/e336/280a/b479/b378a26888fee12e50925f16162ba910.mp3";
+    audio.src = "//owmrtba0l.bkt.clouddn.com/e336%252F280a%252Fb479%252Fb378a26888fee12e50925f16162ba910.mp3";
     audio.oncanplay = function () {
         audio.play();
         $('.dist-container').addClass('playing');
