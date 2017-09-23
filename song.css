@@ -104,6 +104,11 @@
     font-size: 14px;
     line-height: 24px;
 }
+
+.song-description .lines {
+    transition: transform .3s;
+}
+
 .song-description .lyric {
     height: 72px;
     border: 1px solid;
