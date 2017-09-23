@@ -51,7 +51,6 @@ $(function () {
                 let top = $whichLine.offset().top;
                 let linesTop = $('.lines').offset().top;
                 let delta = top - linesTop - $('.lyric').height()/3;
-                console.log(delta)
                 $('.lines').css('transform', `translateY(-${delta}px)`);
             }
         }, 300);
