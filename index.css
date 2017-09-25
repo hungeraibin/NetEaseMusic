@@ -189,3 +189,81 @@ section.art .copyright {
     text-align: center;
     color: #888;
 }
+
+#Tab2Loading {
+    text-align: center;
+}
+
+.hotMusicImg {
+    height: 40vw;
+    background: #D43B32 url("http://s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252389c26bcf016816242eaa6aee") no-repeat center center;
+    background-size: cover;
+}
+
+.hotContainer {
+    position: relative;
+}
+
+.hotContainer .hotMusicText {
+    position: absolute;
+    height: 40vw;
+    background: transparent url("http://s3.music.126.net/m/s/img/index_icon_2x.png?5207a28c3767992ca4bb6d4887c74880") no-repeat -3vw -6.5vw;
+    background-size: 50%;
+    top: -40vw;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.search {
+    position: relative;
+}
+
+.search #searchSong {
+    padding-left: 8vw;
+    display: block;
+    width: 90vw;
+    height: 8vw;
+    margin: 6vw auto;
+    border-radius: 10vw;
+    border: none;
+    outline: none;
+    background-color: #E2E2E3;
+
+}
+
+.search .icon-search {
+    position: absolute;
+    top: 1vw;
+    left: 6vw;
+    width: 6vw;
+    height: 6vw;
+    fill: #9a9a9a;
+}
+
+.hotOutput > p {
+    font-size: 3.2vw;
+    color: #888;
+    padding: 2vw;
+    border-top: 1px solid #E2E2E3;
+}
+
+.hotOutput > ul {
+    display: flex;
+}
+
+.hotOutput > ul > li {
+    padding: 1vw 2vw;
+    margin: 2vw;
+    border: 1px solid #E2E2E3;
+    border-radius: 3vw;
+}
+
+.hotOutput #output {
+    padding: 3vw 5vw;
+}
+
+
+
+

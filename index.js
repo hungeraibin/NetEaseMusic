@@ -10,7 +10,7 @@ $(function () {
                 <svg class="sq">
                    <use xlink:href="#icon-sq"></use>
                 </svg>
-                    演唱者1-专辑1</p>
+                    ${i.singer}</p>
                 <svg class="play-circled">
                     <use xlink:href="#icon-play-circled"></use>
                 </svg>
@@ -37,8 +37,31 @@ $(function () {
             return;
         }
         if (index === 1) {
-            $.get('./page2.json').then((response)=>{
-                $li.text(response.content);
+            $.get('./songs.json').then((response)=>{
+                let items = response;
+                items.forEach((i)=>{
+                    let $song = $(`
+<section class="lastestMusic">
+    <ol>
+        <li>
+            <a href="./song.html?id=${i.id}">
+              <h3>${i.name}</h3>
+                <p>
+                <svg class="sq">
+                   <use xlink:href="#icon-sq"></use>
+                </svg>
+                    ${i.singer}</p>
+                <svg class="play-circled">
+                    <use xlink:href="#icon-play-circled"></use>
+                </svg>
+            </a>
+        </li>
+    </ol>
+</section>`);
+                    $li.append($song);
+                })
+                $('#Tab2Loading').remove();
+
                 $li.attr('data-downloaded', 'yes');
             })
         } else if (index === 2) {
@@ -64,7 +87,7 @@ $(function () {
                 if (result.length !== 0) {
                     $('#output').text(result.map((r)=>r.name).join(','))
                 } else {
-                    $('#output').text('没有结果');
+                    $('#output').text('哎呀呀，没有搜到这首歌哟')
                 }
             })
         }, 1000)
@@ -75,11 +98,37 @@ $(function () {
             var database = [
                 {
                     "id": "1",
-                    "name": "女孩你为何踮脚尖",
+                    "name": "带你去旅行",
                 },
                 {
                     "id": "2",
                     "name": "你不在南京",
+                },
+                {
+                    "id": "3",
+                    "name": "女孩你为何踮脚尖",
+                },
+                {
+                    "id": "4",
+                    "name": "再也没有",
+                },{
+                    "id": "5",
+                    "name": "阳光宅男",
+                },{
+                    "id": "6",
+                    "name": "追光者",
+                },{
+                    "id": "7",
+                    "name": "你不要想起我",
+                },{
+                    "id": "8",
+                    "name": "非酋",
+                },{
+                    "id": "9",
+                    "name": "告白气球",
+                },{
+                    "id": "10",
+                    "name": "最后一页",
                 }
             ];
             let result = database.filter(function (item) {

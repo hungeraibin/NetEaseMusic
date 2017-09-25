@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background:transparent url("//p4.music.126.net/dzglSmh-wy3LzE7FI34bTg==/109951163028113542.jpg") no-repeat center;
+    background:transparent url("//p4.music.126.net/1gEVQiybfgQpecuvtwW-aw==/17848372253942175.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -103,6 +103,7 @@
 .song-description p {
     font-size: 14px;
     line-height: 24px;
+    margin: 2vw;
 }
 
 .song-description .lines {
@@ -110,8 +111,7 @@
 }
 
 .song-description .lyric {
-    height: 72px;
-    border: 1px solid;
+    height: 90px;
     overflow: hidden;
 }
 
