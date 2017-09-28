@@ -45,15 +45,22 @@ $(function () {
     <ol>
         <li>
             <a href="./song.html?id=${i.id}">
-              <h3>${i.name}</h3>
-                <p>
-                <svg class="sq">
-                   <use xlink:href="#icon-sq"></use>
-                </svg>
-                    ${i.singer}</p>
-                <svg class="play-circled">
-                    <use xlink:href="#icon-play-circled"></use>
-                </svg>
+            <div class="wrapper">
+                <div class="rank">
+                    <h3>${i.id}</h3>
+                </div>
+                <div class="descript">
+                   <h3>${i.name}</h3>
+                       <p>
+                       <svg class="sq">
+                          <use xlink:href="#icon-sq"></use>
+                       </svg>
+                        ${i.singer}</p>
+                      <svg class="play-circled">
+                         <use xlink:href="#icon-play-circled"></use>
+                   </svg>
+                </div>
+            </div>
             </a>
         </li>
     </ol>
@@ -85,9 +92,13 @@ $(function () {
             search(value).then((result)=>{
                 timer = undefined;
                 if (result.length !== 0) {
-                    $('#output').text(result.map((r)=>r.name).join(','))
+                    //$('#output').text(result.map((r)=>r.name).join(','))
+                    let $li = `<li><a href="./song.html?id=${result.map((r)=>r.id)}">${result.map((r)=>r.name).join(',')}</a></li>`
+                    $('#output').html($li);
+
                 } else {
-                    $('#output').text('哎呀呀，没有搜到这首歌哟')
+                    let $li = `<li>哎呀呀，没有搜到这首歌哟</li>`
+                    $('#output').html($li);
                 }
             })
         }, 1000)

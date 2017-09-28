@@ -1,6 +1,5 @@
 $(function () {
     let id = parseInt(location.search.match(/\bid=([^&]*)/)[1], 10);
-
     $.get('./songs.json').then(function (response) {
         let songs = response;
         let song = songs.filter((s)=>{
@@ -80,8 +79,5 @@ $(function () {
             $p.appendTo($lyric.children('.lines'));
         })
     }
-
-
-
 
 });

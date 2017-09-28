@@ -124,6 +124,16 @@ section > h2:first-child {
     color: inherit;
 }
 
+.lastestMusic > ol > li .wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.lastestMusic > ol > li .rank > h3 {
+    color: #D43B32;
+    padding-right: 3vw;
+}
+
 .lastestMusic > ol > li h3{
     font-size: 4.53vw;
 }
@@ -242,6 +252,11 @@ section.art .copyright {
     fill: #9a9a9a;
 }
 
+.hotOutput  a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .hotOutput > p {
     font-size: 3.2vw;
     color: #888;
@@ -260,9 +275,12 @@ section.art .copyright {
     border-radius: 3vw;
 }
 
-.hotOutput #output {
+.hotOutput #output li{
     padding: 3vw 5vw;
+    border-bottom: 1px solid #E2E2E3;
 }
+
+
 
 
 
